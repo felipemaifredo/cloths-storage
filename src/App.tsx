@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, Navigate, HashRouter } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { auth } from './Configs/FirebaseConfig';
+
+//Routes
+import Home from './Routes/Public/Home';
+
+//Private
+import Login from './Routes/Private/Login';
+import AdmHome from './Routes/Private/AdmHome';
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Verifica se o usuário está autenticado
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+  }, []);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/adm/login'element={<Login />} />
+        <Route path='/adm/admhome' element={ (loggedIn ? <AdmHome /> : <Navigate to="/adm/login" />) } />
+      </Routes>
+    </HashRouter>
   );
 }
 
