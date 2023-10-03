@@ -1,0 +1,26 @@
+#Link-to {
+    z-index: 9;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    background-color: palevioletred;
+    transition: all 1s;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.01rem;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+    }
+}

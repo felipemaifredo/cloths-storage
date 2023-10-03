@@ -1,0 +1,121 @@
+@import url('../../../variables.style.css');
+
+#AdmProducts {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-image: url('../../../Assets/Images/AgShine.png');
+    background-size: cover;
+
+    &::after {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.815);
+    }
+}
+
+#AdmProducts #link-to-addproduct {
+    z-index: 9;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    background-color: palevioletred;
+    transition: all 1s;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.01rem;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: all .2s;
+    }
+}
+
+#AdmProducts .card-product { 
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#AdmProducts .card-product .img-container {
+    height: 200px;
+    width: 100%;
+    border: 5px solid transparent;
+}
+
+#AdmProducts .card-product .img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+#AdmProducts .card-product .name-container { 
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+}
+
+#AdmProducts .card-product .name-container p { 
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-white);
+}
+
+#AdmProducts .card-product .btns-container { 
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: transparent;
+    border-radius: 0 0 20px 20px;
+}
+
+
+#AdmProducts .card-product .btns-container a, #AdmProducts .card-product .btns-container button { 
+    height: 70%;
+    display: grid;
+    place-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 1s;
+
+    &:hover {
+        transition: all .2s;
+        transform: scale(1.1);
+    }
+
+}
+
+#AdmProducts .card-product .btns-container a svg, #AdmProducts .card-product .btns-container button svg { 
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+
