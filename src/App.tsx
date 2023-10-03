@@ -9,6 +9,9 @@ import Home from './Routes/Public/Home';
 //Private
 import Login from './Routes/Private/Login';
 import AdmHome from './Routes/Private/AdmHome';
+import AdmProducts from './Routes/Private/AdmProducts';
+import AddProduct from './Routes/Private/AddProduct';
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -29,7 +32,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/adm/login'element={<Login />} />
-        <Route path='/adm/admhome' element={ (loggedIn ? <AdmHome /> : <Navigate to="/adm/login" />) } />
+        <Route path='/adm/admhome' element={ <AdmHome /> } />
+        <Route path='/adm/admproducts' element={ <AdmProducts /> } />
+        <Route path='/adm/addproduct' element={ <AddProduct /> } />
       </Routes>
     </HashRouter>
   );

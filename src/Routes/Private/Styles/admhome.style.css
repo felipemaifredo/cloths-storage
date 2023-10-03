@@ -1,0 +1,38 @@
+#AdmHome {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#AdmHome .item-menu-adm {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-decoration: none;    
+    transition: all 1s;
+
+    &:hover {
+        transition: all .2s;
+        transform: scale(1.05);
+    }
+}
+
+#AdmHome .item-menu-adm svg {
+    height: 100px;
+    width: 100px;
+    color: blueviolet;
+}
+
+#AdmHome .item-menu-adm span{
+    color: blueviolet;  
+    font-size: 1.3rem;  
+}
