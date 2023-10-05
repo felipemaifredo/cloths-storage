@@ -76,9 +76,10 @@ const AdmProducts = () => {
                     </div>
                     <div className="btns-container">
                         { produto.active ? 
-                        <Link to={`/produto/${produto.id}`} target='_blank' > <AiOutlineEye /> </Link> 
-                        : <span className='desactive'> <AiOutlineEyeInvisible /> </span> 
-          }
+                            <Link to={`/produto/${produto.id}`} target='_blank' > <AiOutlineEye /> </Link> 
+                            : 
+                            <span className='desactive'> <AiOutlineEyeInvisible /> </span> 
+                        }
                         <Link to={`/adm/edit-product/${produto.id}`}> <BsPencil /> </Link>
                         <button onClick={() => excluirProduto(produto.id, produto.img)} > <BiTrash /> </button>
                     </div>

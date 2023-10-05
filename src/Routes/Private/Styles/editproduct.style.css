@@ -1,0 +1,158 @@
+@import url('../../../variables.style.css');
+
+#editproduct {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-image: url('../../../Assets/Images/AgShine.png');
+    background-size: cover;
+
+    &::after {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.815);
+    }
+}
+
+#editproduct #form-edit-product {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
+    height: auto;
+    min-height: 600px;
+    width: 500px;
+    border-radius: 30px;
+    padding: 20px 0 20px 0;
+}
+
+
+#editproduct form h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#editproduct form > input {
+    width: 70%;
+    height: 30px;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+
+
+    &::placeholder {
+        color: #fff;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#editproduct form select {
+    color: var(--color-white);
+    background-color: transparent;
+    font-size: 1.1rem;
+    border: none;
+    width: 70%;
+    text-align: center;
+}
+
+#editproduct form select option {
+    color: black;
+}
+
+#editproduct form #label-file-add #input-file-add {
+    display: none;
+}
+
+#editproduct form .sizes-container, #editproduct form .colors-container {
+    display: flex;
+    gap: 20px;
+    color: #fff;
+}
+
+#editproduct form .sizes-container .label-size-checkbox, #editproduct form .colors-container .label-color-checkbox{
+    display: flex;
+    gap: 5px;
+}
+
+#editproduct form .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#editproduct form .buttons-container label {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#editproduct form .buttons-container label svg {
+    height: 80%;
+    width: 100%;
+    color: white;
+}
+
+#editproduct form .buttons-container label input {
+    display: none;
+}
+
+#editproduct form button {
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 1.04rem;
+}
+
+#editproduct #form-edit-product .images-btns a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    margin: 5px;
+}
+
+#editproduct form #label-file-add span {
+    color: #fff;
+}
+
+#editproduct form .active-on-edit {
+    background-color: green;
+}
+
+#editproduct form .active-off-edit {
+    background-color: red;
+}
+
+#editproduct form .destaque-on-edit {
+    background-color: rgb(206, 168, 0);
+  }
+
+#editproduct form .destaque-off-edit {
+  background-color: red;
+}

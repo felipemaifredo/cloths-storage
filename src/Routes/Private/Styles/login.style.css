@@ -92,6 +92,13 @@
     }
 }
 
+#Login form .label-input input:-webkit-autofill { 
+    -webkit-box-shadow: 0 0 0px 1000px #e921a6 inset;
+}  
+#Login form .label-input input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+} 
+
 #Login form button {
     height: 50px;
     width: 120px;

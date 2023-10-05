@@ -31,7 +31,6 @@
     border-radius: 30px;
 }
 
-
 #AddProduct form h2 {
     color: var(--color-white);
     font-size: 2rem;
@@ -99,5 +98,4 @@
 
 #AddProduct form #label-file-add span {
     color: #fff;
-
 }

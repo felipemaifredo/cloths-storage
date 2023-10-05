@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { auth } from '../../Configs/FirebaseConfig';
-import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth'
+import { useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import './Styles/login.style.css';
 //Assets
@@ -17,7 +17,7 @@ const Login = () => {
     const [ loginData, setLoginData ] = useState({
         email: '',
         pass: '',
-    })
+    });
 
     function handleSignIn(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -51,24 +51,23 @@ const Login = () => {
     };
 
     return (
-        <div id="Login">
-            <form onSubmit={handleSignIn}>
-                <img src={OIP} alt='logo' />
-                <h1>Log in</h1>
-
-                <label className='label-input'>
-                  <FaUserAlt />
-                  <input type='text' name='email' id='email' onChange={(e) => setLoginData({ ...loginData, email: e.target.value })} value={loginData.email} />
-                  <span className={ loginData.email && 'span-ok' }>Email</span>
-                </label>
-                <label className='label-input'>
-                  <AiFillLock />
-                  <input type='password' name='password' id='password' onChange={(e) => setLoginData({ ...loginData, pass: e.target.value })} value={loginData.pass} />
-                  <span className={ loginData.pass && 'span-ok' }>Senha</span>
-                </label>
-            <button className='button' type='submit'> Login <BiLogIn /> </button>
-      </form>
-        </div>
+      <div id="Login">
+        <form onSubmit={handleSignIn}>
+          <img src={OIP} alt='logo' />
+          <h1>Login</h1>
+          <label className='label-input'>
+            <FaUserAlt />
+            <input type='text' name='email' id='email' onChange={(e) => setLoginData({ ...loginData, email: e.target.value })} value={loginData.email} />
+            <span className={ loginData.email && 'span-ok' }>Email</span>
+          </label>
+          <label className='label-input'>
+            <AiFillLock />
+            <input type='password' name='password' id='password' onChange={(e) => setLoginData({ ...loginData, pass: e.target.value })} value={loginData.pass} />
+            <span className={ loginData.pass && 'span-ok' }>Senha</span>
+          </label>
+          <button className='button' type='submit'> Login <BiLogIn /> </button>
+        </form>
+      </div>
     );
 };
 

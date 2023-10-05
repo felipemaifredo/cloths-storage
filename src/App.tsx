@@ -11,7 +11,7 @@ import Login from './Routes/Private/Login';
 import AdmHome from './Routes/Private/AdmHome';
 import AdmProducts from './Routes/Private/AdmProducts';
 import AddProduct from './Routes/Private/AddProduct';
-
+import EditProduct from './Routes/Private/EditProduct';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,10 +31,11 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/adm/login'element={<Login />} />
-        <Route path='/adm/admhome' element={ <AdmHome /> } />
-        <Route path='/adm/admproducts' element={ <AdmProducts /> } />
-        <Route path='/adm/addproduct' element={ <AddProduct /> } />
+        <Route path='/adm/login'element={<Login /> } />
+        <Route path='/adm/admhome' element={(loggedIn ? <AdmHome /> : <Navigate to="/adm/login" />)}/>
+        <Route path='/adm/admproducts' element={(loggedIn ?  <AdmProducts /> : <Navigate to="/adm/login" />)}/>
+        <Route path='/adm/addproduct' element={(loggedIn ? <AddProduct /> : <Navigate to="/adm/login" />)}/>
+        <Route path="/adm/edit-product/:id" element={(loggedIn ? <EditProduct /> : <Navigate to="/adm/login" />)}/>
       </Routes>
     </HashRouter>
   );

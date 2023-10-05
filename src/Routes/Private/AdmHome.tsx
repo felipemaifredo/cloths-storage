@@ -30,7 +30,6 @@ const AdmHome = () => {
     return (
         <div id="AdmHome">
             {createCardMenu({ link: '/adm/admproducts', name: 'Produtos' })}
-
             <button id='logout-button' onClick={fazerLogout}> Logout <FiLogOut /> </button>
         </div>
     );
