@@ -69,6 +69,7 @@ const AdmProducts = () => {
             {produtos.map((produto) => (
                 <div className="card-product" key={produto.id} style={{backgroundColor: produto.corDestaque}}>
                     <div className="img-container"> 
+                        {produto.destaque && <span className="destaque-icon"> <AiOutlineStar/> </span>}
                         <img src={produto.img} alt="Imagem" />
                     </div>
                     <div className="name-container"> 

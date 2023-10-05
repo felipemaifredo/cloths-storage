@@ -60,7 +60,7 @@ const AddProduct = () => {
                 <input type="checkbox" name={color} className="input-Color-checkbox"
                     onChange={(e) => { 
                         setFormData((prevFormData) => ({ 
-                            ...prevFormData, colors: { ...prevFormData.sizes, [e.target.name]: e.target.checked, }, 
+                            ...prevFormData, colors: { ...prevFormData.colors, [e.target.name]: e.target.checked, }, 
                         })); 
                     }}
                 />                        
@@ -137,7 +137,7 @@ const AddProduct = () => {
                 if (formData.imagem1 && formData.imagem2) {
                     const storageRef = firebase.storage().ref();
                     const nomeArquivo = new Date().getTime() + '-' + formData.imagem1.name;
-                    const nomeArquivo2 = nomeArquivo + '_2';
+                    const nomeArquivo2 = '2_' + nomeArquivo;
                     const uploadTask = storageRef.child(nomeArquivo).put(formData.imagem1);
                     const uploadTask2 = storageRef.child(nomeArquivo2).put(formData.imagem2);
 

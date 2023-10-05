@@ -51,6 +51,7 @@
     height: 200px;
     width: 100%;
     border: 5px solid transparent;
+    position: relative;
 }
 
 #AdmProducts .card-product .img-container img {
@@ -88,7 +89,7 @@
 }
 
 
-#AdmProducts .card-product .btns-container a, #AdmProducts .card-product .btns-container button { 
+#AdmProducts .card-product .btns-container a, #AdmProducts .card-product .btns-container button, #AdmProducts .btns-container span.desactive { 
     height: 70%;
     display: grid;
     place-items: center;
@@ -104,8 +105,29 @@
 
 }
 
-#AdmProducts .card-product .btns-container a svg, #AdmProducts .card-product .btns-container button svg { 
+#AdmProducts .card-product .btns-container a svg, #AdmProducts .card-product .btns-container button svg, #AdmProducts .btns-container span.desactive svg { 
     color: white;
+    height: 100%;
+    width: 100%;
+}
+
+#AdmProducts .btns-container span.desactive svg{
+    color: red;
+    cursor: not-allowed;
+}
+
+#AdmProducts .destaque-icon {
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+    color: rgb(255, 187, 0);
+}
+
+#AdmProducts .destaque-icon svg {
+    color: yellow;
     height: 100%;
     width: 100%;
 }

@@ -33,7 +33,7 @@ const EditProduct = () => {
         descrip: '',
         price: '',
         sizes: [],
-        color: [],
+        colors: [],
         imagem: '',
         imagem2: '',
     });
@@ -59,7 +59,7 @@ const EditProduct = () => {
                       price: productData.price,
                       descrip: productData.descrip,
                       sizes: productData.sizes,
-                      color: productData.color,
+                      colors: productData.color,
                       imagem: productData.img,
                       imagem2: productData.img2,
                     });
@@ -106,17 +106,17 @@ const EditProduct = () => {
         {name: 'Macacões', value: 'Macacoes'}
     ];
 
-    const renderColors = ({color, key} : any) => {
+    const renderColors = ({cor, key} : any) => {
         return (
             <label className="label-color-checkbox" key={key}>
-                <input type="checkbox" checked={formData.sizes[0] === color} name={color} className="input-Color-checkbox" 
+                <input type="checkbox" name={cor} className="input-Color-checkbox" 
                     onChange={(e) => { 
                         setFormData((prevFormData) => ({ 
-                            ...prevFormData, colors: { ...prevFormData.sizes, [e.target.name]: e.target.checked, }, 
+                            ...prevFormData, colors: { ...prevFormData.colors, [e.target.name]: e.target.checked, }, 
                         })); 
                     }}
                 />                        
-                {color}
+                {cor}
             </label>  
         )
     };
@@ -174,7 +174,7 @@ const EditProduct = () => {
                 descrip: formData.descrip,
                 price: formData.price,
                 sizes: formData.sizes,
-                color: formData.color,
+                colors: formData.colors,
                 
             }).then( () => {
                 try {
@@ -270,7 +270,7 @@ const EditProduct = () => {
                 <div className="colors-container">
                     <p>Cores:</p>
                     {colorFilds.map((colorFild, index) => (
-                        <> {renderColors({ color: colorFild.cor, key: index })} </>
+                        <> {renderColors({ cor: colorFild.cor, key: index })} </>
                     ))}
                 </div>
                 <div className='images-btns'>
