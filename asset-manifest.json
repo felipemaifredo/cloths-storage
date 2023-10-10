@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cloths-storage/static/css/main.8d8bc374.css",
-    "main.js": "/cloths-storage/static/js/main.bac7aad6.js",
+    "main.css": "/cloths-storage/static/css/main.f9274672.css",
+    "main.js": "/cloths-storage/static/js/main.7a8f12e9.js",
     "static/js/787.573f7da2.chunk.js": "/cloths-storage/static/js/787.573f7da2.chunk.js",
     "static/media/AgShine.png": "/cloths-storage/static/media/AgShine.e88866e84694c5e5ee29.png",
     "static/media/OIP.jpg": "/cloths-storage/static/media/OIP.a398474f073da0230ddf.jpg",
     "index.html": "/cloths-storage/index.html",
-    "main.8d8bc374.css.map": "/cloths-storage/static/css/main.8d8bc374.css.map",
-    "main.bac7aad6.js.map": "/cloths-storage/static/js/main.bac7aad6.js.map",
+    "main.f9274672.css.map": "/cloths-storage/static/css/main.f9274672.css.map",
+    "main.7a8f12e9.js.map": "/cloths-storage/static/js/main.7a8f12e9.js.map",
     "787.573f7da2.chunk.js.map": "/cloths-storage/static/js/787.573f7da2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d8bc374.css",
-    "static/js/main.bac7aad6.js"
+    "static/css/main.f9274672.css",
+    "static/js/main.7a8f12e9.js"
   ]
 }
