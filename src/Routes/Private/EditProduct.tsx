@@ -16,6 +16,8 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from 'react-icons/ai';
 import { AiOutlineEye } from 'react-icons/ai';
 import { AiOutlineStar } from 'react-icons/ai';
+import { PiArrowLineRightFill } from 'react-icons/pi';
+import { PiArrowLineLeftFill } from 'react-icons/pi';
 
 //Configs
 firebase.initializeApp(firebaseConfig);
@@ -36,6 +38,8 @@ const EditProduct = () => {
         colors: [],
         imagem: '',
         imagem2: '',
+        isfliped: false,
+        position: '',
     });
 
     const [newImage1, setNewImage1] = useState( null as File | null );
@@ -51,17 +55,20 @@ const EditProduct = () => {
                 const productData = doc.data();
                 if (productData) {
                     setFormData({
-                      ...formData,
-                      active: productData.active,
-                      destaque: productData.destaque,
-                      name: productData.name,
-                      corDestaque: productData.corDestaque,
-                      price: productData.price,
-                      descrip: productData.descrip,
-                      sizes: productData.sizes,
-                      colors: productData.color,
-                      imagem: productData.img,
-                      imagem2: productData.img2,
+                        ...productData,
+                        active: productData.active,
+                        destaque: productData.destaque,
+                        category: productData.category,
+                        name: productData.name,
+                        corDestaque: productData.corDestaque,
+                        descrip: productData.descrip,
+                        price: productData.price,
+                        sizes: productData.sizes,
+                        colors: productData.colors,
+                        imagem: productData.img,
+                        imagem2: productData.img2,
+                        isfliped: productData.isFliped,
+                        position: productData.position
                     });
                 } else {
                     alert('Produto não encontrado!');
@@ -169,13 +176,15 @@ const EditProduct = () => {
             await docRef.update({
                 active: formData.active,
                 destaque: formData.destaque,
+                category: formData.category,
                 name: formData.name,
                 corDestaque: formData.corDestaque,
                 descrip: formData.descrip,
                 price: formData.price,
                 sizes: formData.sizes,
                 colors: formData.colors,
-                
+                isFliped: formData.isfliped,
+                position: parseInt(formData.position),
             }).then( () => {
                 try {
                     if (newImage1) {
@@ -278,11 +287,11 @@ const EditProduct = () => {
                     { formData.imagem2 &&  <a href={formData.imagem2} target='_blanck'> Ver Imagem 2 </a> }
                 </div>
                 <label id='label-file-add'>
-                    <span id='label-file-text'> { newImage1 ? 'Imagem 1 selecionada' : 'Imagem 1 não selecionada' } </span>
+                    <span id='label-file-text'> { newImage1 ? 'Nova Imagem 1 selecionada' : 'Nova Imagem 1 não selecionada' } </span>
                     <input type='file' id='input-file-add' onChange={handleImagem1Selecionada} />
                 </label>
                 <label id='label-file-add'>
-                    <span id='label-file-text'> { newImage2 ? 'Imagem 2 selecionada' : 'Imagem 2 não selecionada' } </span>
+                    <span id='label-file-text'> { newImage2 ? 'Nova Imagem 2 selecionada' : 'Nova Imagem 2 não selecionada' } </span>
                     <input type='file' id='input-file-add' onChange={handleImagem2Selecionada} />
                 </label>
                 <div className='buttons-container'>
@@ -294,6 +303,11 @@ const EditProduct = () => {
                         <AiOutlineStar />
                         <input type='checkbox' checked={formData.destaque} onChange={(e) => setFormData({...formData, destaque: e.target.checked })} />
                     </label>
+                    <label className={formData.isfliped ? 'isfliped-on-edit' : 'isfliped-off-edit'}>
+                        { formData.isfliped ? <PiArrowLineLeftFill /> : <PiArrowLineRightFill /> }
+                        <input type='checkbox' checked={formData.isfliped} onChange={(e) => setFormData({...formData, isfliped: e.target.checked })} />
+                    </label>
+                    <input type='number' className='position-input' min={0} value={formData.position} onChange={(e) => setFormData({ ...formData, position: e.target.value })} />
                     <button type="submit" > <AiFillPlusCircle /> Editar </button>
                 </div>
             </form>

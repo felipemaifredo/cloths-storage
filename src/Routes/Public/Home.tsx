@@ -1,7 +1,16 @@
+//Imports
+import SectionHome from "../../Sections/SectionHome";
+import Destaques from "../../Sections/Destaques";
+
+//Components
+import Carrinho from "./Components/Carrinho";
+
 const Home = () => {
     return (
         <div id="Home">
-            <h1>Aqui é a home</h1>
+            <Carrinho />
+            <SectionHome />
+            <Destaques />
         </div>
     );
 };

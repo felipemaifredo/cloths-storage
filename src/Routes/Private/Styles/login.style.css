@@ -15,11 +15,9 @@
         height: 100%;
         width: 100%;
         z-index: 1;
-        background-color: rgba(255, 255, 255, 0.616);
+        background-color: var( --color-white-opacity)
     }
 }
-
-
 
 #Login form {
     z-index: 2;
@@ -29,8 +27,8 @@
     justify-content: space-around;
     height: 500px;
     width: 400px;
-    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
     border-radius: 20px;
+    background: var(--color-bg-gradient);
 }
 
 #Login form img {
@@ -93,10 +91,10 @@
 }
 
 #Login form .label-input input:-webkit-autofill { 
-    -webkit-box-shadow: 0 0 0px 1000px #e921a6 inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-1) inset;
 }  
 #Login form .label-input input:-webkit-autofill {
-    -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: var(--color-white) !important;
 } 
 
 #Login form button {

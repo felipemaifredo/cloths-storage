@@ -9,6 +9,10 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
+//Asets
+import { PiArrowLineRightFill } from 'react-icons/pi';
+import { PiArrowLineLeftFill } from 'react-icons/pi';
+
 //Configs
 firebase.initializeApp(firebaseConfig);
 
@@ -25,6 +29,8 @@ const AddProduct = () => {
         colors: [],
         imagem1: null as File | null,
         imagem2: null as File | null,
+        isFliped: false,
+        position: 1,
     });
 
     const categoriesFields = [
@@ -129,7 +135,10 @@ const AddProduct = () => {
                 descrip: formData.descrip,
                 price: formData.price,
                 sizes: formData.sizes,
-                color: formData.colors,
+                colors: formData.colors,
+                isFliped: formData.isFliped,
+                position: formData.position,
+
             }).then((docRef) => {
                 let novoProdutoId = docRef.id;
                 docRef.update({ id: novoProdutoId })
@@ -193,6 +202,8 @@ const AddProduct = () => {
             colors: [],
             imagem1: null as File | null,
             imagem2: null as File | null,
+            isFliped: false,
+            position: 1,
         });
     };
 
@@ -231,7 +242,14 @@ const AddProduct = () => {
                     <span id='label-file-text'> { formData.imagem2 ? 'Imagem 2 selecionada' : 'Imagem 2 não selecionada' } </span>
                     <input type='file' id='input-file-add' onChange={handleImagem2Selecionada} />
                 </label>
-                <button type="submit" > <AiFillPlusCircle /> Cadastrar </button>
+                <div className='buttons-container'>
+                    <label className={formData.isFliped ? 'isfliped-on-edit' : 'isfliped-off-edit'}>
+                        { formData.isFliped ? <PiArrowLineLeftFill /> : <PiArrowLineRightFill /> }
+                        <input type='checkbox' checked={formData.isFliped} onChange={(e) => setFormData({...formData, isFliped: e.target.checked })} />
+                    </label>
+                    <input type='number' className='position-input' min={0} value={formData.position} onChange={(e) => setFormData({ ...formData, position: parseInt(e.target.value) })} />
+                    <button type="submit" > <AiFillPlusCircle /> Cadastrar </button>
+                </div>
             </form>
         </div>
     );

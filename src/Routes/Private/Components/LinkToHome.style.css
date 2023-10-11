@@ -1,3 +1,5 @@
+@import url('../../../variables.style.css');
+
 #link-to-home {
     position: absolute;
     top: 10%;
@@ -12,7 +14,7 @@
     text-decoration: none;
     border: 1px solid var(--color-white);
     color: var(--color-white);
-    background-color: palevioletred;
+    background-color: var(--color-1);
     transition: all 1s;
     cursor: pointer;
     font-weight: 600;

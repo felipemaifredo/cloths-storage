@@ -9,7 +9,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
+    background: var(--color-bg-gradient);
     padding: 200px 20px 0 20px;    
 }
 
@@ -28,7 +28,7 @@
     text-decoration: none;
     border: 1px solid var(--color-white);
     color: var(--color-white);
-    background-color: palevioletred;
+    background-color: var(--color-1);
     transition: all 1s;
     cursor: pointer;
     font-weight: 600;
@@ -106,13 +106,13 @@
 }
 
 #AdmProducts .card-product .btns-container a svg, #AdmProducts .card-product .btns-container button svg, #AdmProducts .btns-container span.desactive svg { 
-    color: white;
+    color: var(--color-white);
     height: 100%;
     width: 100%;
 }
 
 #AdmProducts .btns-container span.desactive svg{
-    color: red;
+    color: var(--color-red);
     cursor: not-allowed;
 }
 
@@ -123,11 +123,10 @@
     right: 5%;
     height: 50px;
     width: 50px;
-    color: rgb(255, 187, 0);
 }
 
 #AdmProducts .destaque-icon svg {
-    color: yellow;
+    color: var(--color-yellow);
     height: 100%;
     width: 100%;
 }

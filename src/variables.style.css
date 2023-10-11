@@ -1,4 +1,13 @@
 :root {
     --color-white: #fff;
-    --color-1: #ff77f4;
+    --color-black: #000000;
+    --color-white-opacity: rgba(255, 255, 255, 0.616);
+    --color-1: #e921a6;
+    --color-red: #ff0000;
+    --color-yellow: #ffd900;
+    --color-purple: #8a2be2;
+    --color-green: #008b17;
+
+    --color-bg-gradient: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
+    border-radius: 20px;
 }

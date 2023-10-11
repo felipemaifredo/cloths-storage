@@ -17,7 +17,7 @@
         z-index: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.815);
+        background-color: var(--color-white-opacity);
     }
 }
 
@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,163,1) 100%);
+    background: var(--color-bg-gradient);
     height: auto;
     min-height: 600px;
     width: 500px;
@@ -49,12 +49,12 @@
     font-size: 1.1rem;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-bottom: 1px solid var(--color-white);
+    color: var(--color-white);
 
 
     &::placeholder {
-        color: #fff;
+        color: var(--color-white);
     }
 
     &:focus {
@@ -72,7 +72,7 @@
 }
 
 #editproduct form select option {
-    color: black;
+    color: var(--color-black);
 }
 
 #editproduct form #label-file-add #input-file-add {
@@ -82,7 +82,7 @@
 #editproduct form .sizes-container, #editproduct form .colors-container {
     display: flex;
     gap: 20px;
-    color: #fff;
+    color: var(--color-white);
 }
 
 #editproduct form .sizes-container .label-size-checkbox, #editproduct form .colors-container .label-color-checkbox{
@@ -109,11 +109,18 @@
 #editproduct form .buttons-container label svg {
     height: 80%;
     width: 100%;
-    color: white;
+    color: var(--color-white);
 }
 
 #editproduct form .buttons-container label input {
     display: none;
+}
+
+#editproduct form .buttons-container .position-input {
+    width: 35px;
+    height: 30px;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 #editproduct form button {
@@ -132,27 +139,27 @@
 #editproduct #form-edit-product .images-btns a {
     padding: 10px;
     text-decoration: none;
-    color: white;
-    border: 1px solid white;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
     margin: 5px;
 }
 
 #editproduct form #label-file-add span {
-    color: #fff;
+    color: var(--color-white);
 }
 
 #editproduct form .active-on-edit {
-    background-color: green;
+    background-color: var(--color-green);
 }
 
 #editproduct form .active-off-edit {
-    background-color: red;
+    background-color: var(--color-red);
 }
 
 #editproduct form .destaque-on-edit {
-    background-color: rgb(206, 168, 0);
+    background-color: var(--color-yellow);
   }
 
 #editproduct form .destaque-off-edit {
-  background-color: red;
+  background-color: var(--color-red);
 }

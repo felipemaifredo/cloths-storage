@@ -1,0 +1,35 @@
+@import url('../../../variables.style.css');
+
+#Carrinho {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+
+}
+
+#Carrinho button {
+    height: 50px;
+    width: 50px;
+}
+
+#Carrinho button svg {
+    height: 50%;
+    width: 50%;
+}
+
+#Carrinho .cart-off {
+    display: none;
+}
+
+#Carrinho .cart-on {
+    display: block;
+}
+
+#Carrinho .container-cart {
+    position: absolute;
+    background-color: white;
+    top: -100px;
+    right: -100px;
+    height: 100vh; 
+    width: 400px;
+}
