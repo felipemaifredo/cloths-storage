@@ -3,12 +3,12 @@ import SectionHome from "../../Sections/SectionHome";
 import Destaques from "../../Sections/Destaques";
 
 //Components
-import Carrinho from "./Components/Carrinho";
+import Cart from "./Components/Carrinho";
 
 const Home = () => {
     return (
         <div id="Home">
-            <Carrinho />
+            <Cart />
             <SectionHome />
             <Destaques />
         </div>

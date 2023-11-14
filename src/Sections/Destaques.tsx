@@ -2,7 +2,7 @@
 import './Styles/Destaques.style.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
-import React,{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import firebaseConfig from '../Configs/FirebaseConfig';
 
 //Configs
@@ -10,18 +10,19 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 const Destaques = () =>{
+ 
     type ProductType = {
-        id: string;
-        name: string;
-        descrip: string;
-        corDestaque: string;
-        price: string;
-        img: string;
-        img2: string;
-        colors: object[];
-        sizes: object[];
-        isFliped: boolean;
-        position: number;
+      id: string;
+      name: string;
+      descrip: string;
+      corDestaque: string;
+      price: string;
+      img: string;
+      img2: string;
+      colors: object[];
+      sizes: object[];
+      isFliped: boolean;
+      position: number;
     };
     
     const [destaques, setDestaques] = useState<ProductType[]>([]);
@@ -56,7 +57,7 @@ const Destaques = () =>{
         buscarResultados();
       }, []);
 
-      const createDestaque = ({name, price, descrip, img, img2, corDestaque, isFliped} : any) => {
+      const createDestaque = ({id, name, price, descrip, img, img2, corDestaque, isFliped} : any) => {
         return (
           <div className={isFliped ? 'container-destaq isfliped' : 'container-destaq'} style={{backgroundColor: corDestaque}}>
             <div className='box-info'>
@@ -78,6 +79,7 @@ const Destaques = () =>{
         <div id="Destaques">
             {destaques.map((destaque) => (
               <> {createDestaque({
+                  id: destaque.id,
                   name: destaque.name,
                   price: destaque.price,
                   descrip: destaque.descrip,
